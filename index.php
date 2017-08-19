@@ -1,76 +1,28 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
 
-class Animal
-{
-    public $name;
+$fauna = new \Amadeus\Fauna();
 
-    public function __construct($name)
-    {
-        $this->name = $name;
+$result = [];
+foreach ($fauna->getAnimals() as $animal) {
+    $result[] = $animal->move(mt_rand(0, 20));
+    $result[] = $animal->speak();
+
+    if ($animal instanceof \Core\Animals\Actions\BiteableInterface) {
+        $faunaAnimals = array_values($fauna->getAnimals());
+        $randomAnimal = $faunaAnimals[mt_rand(0, count($faunaAnimals) - 1)];
+        $result[] = $animal->bite($randomAnimal);
     }
 
-    public function walk()
-    {
-        if($this->name == 'dog' || $this->name == 'cat' || $this->name == 'rat')
-            echo $this->name . ' walking';
+    if ($animal instanceof \Core\Animals\Actions\FlyableInterface) {
+        $result[] =  $animal->fly();
     }
 
-    public function meow()
-    {
-        echo $this->name . ' meow';
+    if ($animal instanceof \Amadeus\Actions\WorkableInterface) {
+        $result[] =  $animal->work();
     }
 
-    public function run()
-    {
-        echo $this->name . ' run';
-    }
-
-    public function wuf()
-    {
-        echo $this->name . ' wuf';
-    }
-
-    public function byte($object)
-    {
-        echo $this->name . ' has bitten' . $object;
-    }
-
-    public function fly()
-    {
-        echo $this->name . ' fly';
-    }
-
-    public function pi()
-    {
-        echo $this->name . ' pi';
-    }
+    $result[] =  $animal->eat('apple');
 }
 
-$animals = [
-    new Animal('cat'), new Animal('dog'), new Animal('sparrow'), new Animal('rat')
-];
-
-foreach($animals as $animal) {
-    switch($animal->name)
-    {
-        case 'cat':
-            $animal->walk();
-            $animal->meow();
-            break;
-        case 'dog':
-            $animal->walk();
-            $animal->run();
-            $animal->wuf();
-            $animal->byte('man');
-            break;
-        case 'sparrow':
-            $animal->walk();
-            $animal->tweet();
-            $animal->fly();
-            break;
-        case 'rat':
-            $animal->pi();
-            break;
-    }
-    $animal->eat('food');
-}
+echo implode('<br />', $result);
