@@ -13,6 +13,6 @@ class Cat extends MammalsAbstract
 {
     public function speak() : string
     {
-        return $this->getName() . ' meow' . PHP_EOL;
+        return $this->getName() . ' meow';
     }
 }

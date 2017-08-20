@@ -13,6 +13,6 @@ abstract class BirdsAbstract extends AnimalsAbstract implements FlyableInterface
 {
     public function fly() : string
     {
-        return $this->name . ' fly' . PHP_EOL;
+        return $this->name . ' fly';
     }
 }

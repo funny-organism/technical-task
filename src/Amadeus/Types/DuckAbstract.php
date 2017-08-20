@@ -14,7 +14,7 @@ abstract class DuckAbstract extends MammalsAbstract implements SwimableInterface
 {
     public function swim() : string
     {
-        return $this->name . ' swim' . PHP_EOL;
+        return $this->name . ' swim';
     }
 
 }

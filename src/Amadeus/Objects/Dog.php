@@ -22,11 +22,11 @@ class Dog extends MammalsAbstract
 
     protected function run() : string
     {
-        return $this->name . ' run' . PHP_EOL;
+        return $this->name . ' run';
     }
 
     public function speak() : string
     {
-        return $this->name . ' wuf' . PHP_EOL;
+        return $this->name . ' wuf';
     }
 }

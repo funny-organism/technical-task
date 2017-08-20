@@ -13,6 +13,6 @@ class Duck extends DuckAbstract
 {
     public function speak() : string
     {
-        return $this->getName() . ' crya' . PHP_EOL;
+        return $this->getName() . ' crya';
     }
 }

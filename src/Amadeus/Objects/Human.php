@@ -13,6 +13,6 @@ class Human extends HumanAbstract
 {
     public function speak() : string
     {
-        return $this->getName() . ' word' . PHP_EOL;
+        return $this->getName() . ' word';
     }
 }

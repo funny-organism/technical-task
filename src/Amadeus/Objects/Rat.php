@@ -13,6 +13,6 @@ class Rat extends MammalsAbstract
 {
     public function speak() : string
     {
-        return $this->getName() . ' pi' . PHP_EOL;
+        return $this->getName() . ' pi';
     }
 }

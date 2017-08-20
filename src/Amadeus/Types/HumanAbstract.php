@@ -14,6 +14,6 @@ abstract class HumanAbstract extends MammalsAbstract implements WorkableInterfac
 {
     public function work() : string
     {
-        return $this->name . ' work' . PHP_EOL;
+        return $this->name . ' work';
     }
 }

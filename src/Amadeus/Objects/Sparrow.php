@@ -13,6 +13,6 @@ class Sparrow extends BirdsAbstract
 {
     public function speak() : string
     {
-        return $this->getName() . ' tweet' . PHP_EOL;
+        return $this->getName() . ' tweet';
     }
 }

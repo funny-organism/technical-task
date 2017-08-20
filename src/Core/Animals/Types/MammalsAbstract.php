@@ -13,7 +13,7 @@ abstract class MammalsAbstract extends AnimalsAbstract implements BiteableInterf
 {
     public function bite(AnimalsAbstract $victim) : string
     {
-        return $this->name . ' bites ' . $victim->getName() . PHP_EOL;
+        return $this->name . ' bites ' . $victim->getName();
     }
 
 }
