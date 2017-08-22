@@ -1,30 +1,19 @@
 <?php
-declare(strict_types=1);
+/**
+ * Created by PhpStorm
+ * User: Sergey
+ * Date: 22.08.2017
+ * Time: 22:38
+ */
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$fauna = new \Amadeus\Fauna();
+$actions = require __DIR__ . '/config/actions.php';
+$characterWorldTypes = require __DIR__ . '/config/characters.php';
+$characters = require __DIR__ . '/config/population.php';
 
-$result = [];
-foreach ($fauna->getAnimals() as $animal) {
-    $result[] = $animal->move(mt_rand(0, 20));
-    $result[] = $animal->speak();
+$earth = new Funny\Worlds\Earth($characters, $actions, $characterWorldTypes);
 
-    if ($animal instanceof \Core\Animals\Actions\BiteableInterface) {
-        $faunaAnimals = array_values($fauna->getAnimals());
-        $randomAnimal = $faunaAnimals[mt_rand(0, count($faunaAnimals) - 1)];
-        $result[] = $animal->bite($randomAnimal);
-    }
+$simulationResult = $earth->simulate();
 
-    if ($animal instanceof \Core\Animals\Actions\FlyableInterface) {
-        $result[] =  $animal->fly();
-    }
-
-    if ($animal instanceof \Amadeus\Actions\WorkableInterface) {
-        $result[] =  $animal->work();
-    }
-
-    $result[] =  $animal->eat('apple');
-}
-
-echo implode('<br />', $result);
+echo implode('<br>', $simulationResult);

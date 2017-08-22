@@ -1,11 +1,13 @@
 {
+    "require": {
+        "php": "^7.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.2"
     },
     "autoload": {
         "psr-4": {
-            "Amadeus\\": "src/Amadeus",
-            "Core\\": "src/Core"
+            "Funny\\": "src/"
         }
     }
 }
