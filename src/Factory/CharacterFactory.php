@@ -21,11 +21,6 @@ class CharacterFactory
         $this->worldTypes = $worldTypes;
     }
 
-    /**
-     * @param array $charactersConfig
-     * @param WorldAbstract $owner
-     * @return array
-     */
     public function createCharacters(array $charactersConfig, WorldAbstract $owner) : array
     {
         $createdCharacters = [];

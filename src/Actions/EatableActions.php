@@ -16,17 +16,17 @@ class EatableActions extends ActionAbstract
 {
     private const ACTION_TYPE = 'eatable';
 
-    public function getType()
+    public function getType() : string
     {
         return self::ACTION_TYPE;
     }
 
-    public function eat(CharacterAbstract $character)
+    public function eat(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is eating';
     }
 
-    public function drink(CharacterAbstract $character)
+    public function drink(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is drinking';
     }

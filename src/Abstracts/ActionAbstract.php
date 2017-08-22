@@ -22,5 +22,5 @@ abstract class ActionAbstract
         throw new \Exception(get_class($character) . " isnt appropriate object. Object must be instance of " . CharacterAbstract::class);
     }
 
-    abstract public function getType();
+    abstract public function getType() : string ;
 }

@@ -43,7 +43,7 @@ class EarthCharacter extends CharacterAbstract
         }
     }
 
-    public function performAction(string $actionType, string $action)
+    public function performAction(string $actionType, string $action) : string
     {
         if (
             $this->owner->hasAction($actionType) &&
@@ -101,7 +101,7 @@ class EarthCharacter extends CharacterAbstract
             if (!in_array($action, $this->actions[$actionType])) {
                 $this->actions[$actionType][] = $action;
             }
-        } else {
+        } elseif (array_key_exists($actionType, $this->owner->getActions())) {
             $this->actions[$actionType][] = $action;
         }
     }

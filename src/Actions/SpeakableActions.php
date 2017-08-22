@@ -16,12 +16,12 @@ class SpeakableActions extends ActionAbstract
 {
     private const ACTION_TYPE = 'speakable';
 
-    public function getType()
+    public function getType() : string
     {
         return self::ACTION_TYPE;
     }
 
-    public function speak(CharacterAbstract $character)
+    public function speak(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is speaking';
     }

@@ -16,22 +16,22 @@ class MovableActions extends ActionAbstract
 {
     private const ACTION_TYPE = 'movable';
 
-    public function getType()
+    public function getType() : string
     {
         return self::ACTION_TYPE;
     }
 
-    public function walk(CharacterAbstract $character)
+    public function walk(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is walking';
     }
 
-    public function fly(CharacterAbstract $character)
+    public function fly(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is flying';
     }
 
-    public function swim(CharacterAbstract $character)
+    public function swim(CharacterAbstract $character) : string
     {
         return $character->getName() . ' is swimming';
     }

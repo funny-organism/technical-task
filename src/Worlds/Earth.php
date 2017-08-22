@@ -63,7 +63,7 @@ class Earth extends WorldAbstract
         return isset($this->actions[$actionType]);
     }
 
-    public function simulate()
+    public function simulate() : array
     {
         $result = [];
         foreach ($this->getCharacters() as $type => $characters) {

@@ -16,22 +16,22 @@ class AttackableActions extends ActionAbstract
 {
     private const ACTION_TYPE = 'attackable';
 
-    public function getType()
+    public function getType() : string
     {
         return self::ACTION_TYPE;
     }
 
-    public function bite(CharacterAbstract $character)
+    public function bite(CharacterAbstract $character) : string
     {
         return $character->getName() . ' bite someone';
     }
 
-    public function cast(CharacterAbstract $character)
+    public function cast(CharacterAbstract $character) : string
     {
         return $character->getName() . ' cast some magic on someone';
     }
 
-    public function shoot(CharacterAbstract $character)
+    public function shoot(CharacterAbstract $character) : string
     {
         return $character->getName() . ' shoots in someone';
     }

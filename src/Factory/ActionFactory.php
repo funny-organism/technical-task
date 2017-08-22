@@ -10,10 +10,6 @@ namespace Funny\Factory;
 
 
 use Funny\Abstracts\ActionAbstract;
-use Funny\Actions\AttackableActions;
-use Funny\Actions\EatableActions;
-use Funny\Actions\MovableActions;
-use Funny\Actions\SpeakableActions;
 
 class ActionFactory
 {
